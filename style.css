@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: rgb(192,34,195);
+    background: linear-gradient(0deg, rgba(192,34,195,1) 13%, rgba(32,238,232,1) 90%);
+    padding: 10px;
+    overflow: hidden;
+}
+
+.todoapp{
+    width: 100%;
+    max-width: 540px;
+    background-color: wheat;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.todoapp h2{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: black;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.todoapp img{
+    width: 30px;
+    margin-left: 10px;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-size: 14px;
+}
+
+button{
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #4e6ff7;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+ul li{
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    word-wrap: break-word;
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+}
+
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(imgaes/unchanged.png);
+    background-size: cover;
+    background-position: center;
+    top: 8px;
+    left: 8px;
+}
+
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul li.checked::before{
+    background-image: url(imgaes/checked.png);
+}
+
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-weight: bolder;
+    font-size: 22px;
+    color: #4e6ff7;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+ul li span:hover{
+    background: #555;
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+    .container{
+        overflow: hidden;
+    }
+    .todoapp {
+        padding: 30px 20px 50px;
+        max-width: 90%;
+        overflow: hidden;
+    }
+
+    .todoapp h2 {
+        font-size: 1.5rem;
+    }
+
+    .row {
+        padding-left: 15px;
+       
+    }
+    
+    button {
+        border: none;
+        outline: none;
+        padding: 12px 30px;
+        font-size: 14px;
+        cursor: pointer;
+        border-radius: 0 0 25px 25px;
+    }
+
+    input {
+        padding: 8px;
+        font-size: 20px;
+        margin-top: 8px;
+        margin-left: 40px;
+        word-wrap: break-word;
+        
+    }
+
+    ul li {
+        font-size: 20px;
+        padding: 10px 8px 10px 40px;
+    
+    }
+
+    ul li::before {
+        height: 24px;
+        width: 24px;
+        top: 6px;
+        left: 6px;
+    }
+
+    ul li span {
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+        line-height: 30px;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 480px) {
+    .todoapp {
+        padding: 20px 15px 40px;
+        max-width: 100%;
+    }
+
+    .todoapp h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .row {
+        flex-direction: column;
+        padding-left: 0;
+    }
+
+    input {
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    ul li {
+        font-size: 20px;
+        padding: 5px 5px 8px 35px;
+    }
+
+    ul li::before {
+        height: 20px;
+        width: 20px;
+    }
+
+    ul li span {
+        width: 25px;
+        height: 25px;
+        font-size: 16px;
+    }
+}
